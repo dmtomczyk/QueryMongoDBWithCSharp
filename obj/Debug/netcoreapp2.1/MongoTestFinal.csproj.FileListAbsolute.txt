@@ -1,0 +1,11 @@
+C:\Users\OPERATIONS\Desktop\kiosk\newFeatures\MongoTest\MongoTestFinal\MongoTestFinal\obj\Debug\netcoreapp2.1\MongoTestFinal.csprojAssemblyReference.cache
+C:\Users\OPERATIONS\Desktop\kiosk\newFeatures\MongoTest\MongoTestFinal\MongoTestFinal\obj\Debug\netcoreapp2.1\MongoTestFinal.csproj.CoreCompileInputs.cache
+C:\Users\OPERATIONS\Desktop\kiosk\newFeatures\MongoTest\MongoTestFinal\MongoTestFinal\obj\Debug\netcoreapp2.1\MongoTestFinal.AssemblyInfoInputs.cache
+C:\Users\OPERATIONS\Desktop\kiosk\newFeatures\MongoTest\MongoTestFinal\MongoTestFinal\obj\Debug\netcoreapp2.1\MongoTestFinal.AssemblyInfo.cs
+C:\Users\OPERATIONS\Desktop\kiosk\newFeatures\MongoTest\MongoTestFinal\MongoTestFinal\bin\Debug\netcoreapp2.1\MongoTestFinal.deps.json
+C:\Users\OPERATIONS\Desktop\kiosk\newFeatures\MongoTest\MongoTestFinal\MongoTestFinal\bin\Debug\netcoreapp2.1\MongoTestFinal.runtimeconfig.json
+C:\Users\OPERATIONS\Desktop\kiosk\newFeatures\MongoTest\MongoTestFinal\MongoTestFinal\bin\Debug\netcoreapp2.1\MongoTestFinal.runtimeconfig.dev.json
+C:\Users\OPERATIONS\Desktop\kiosk\newFeatures\MongoTest\MongoTestFinal\MongoTestFinal\bin\Debug\netcoreapp2.1\MongoTestFinal.dll
+C:\Users\OPERATIONS\Desktop\kiosk\newFeatures\MongoTest\MongoTestFinal\MongoTestFinal\bin\Debug\netcoreapp2.1\MongoTestFinal.pdb
+C:\Users\OPERATIONS\Desktop\kiosk\newFeatures\MongoTest\MongoTestFinal\MongoTestFinal\obj\Debug\netcoreapp2.1\MongoTestFinal.dll
+C:\Users\OPERATIONS\Desktop\kiosk\newFeatures\MongoTest\MongoTestFinal\MongoTestFinal\obj\Debug\netcoreapp2.1\MongoTestFinal.pdb
