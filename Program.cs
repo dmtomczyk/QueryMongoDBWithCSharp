@@ -24,21 +24,17 @@ namespace WorkingWithMongoDB
             // the following variable declarations are used to rename those db items for use in this application
             [BsonId] public ObjectId Id { get; set; }
 
-            [BsonElement("firstName")] public string FirstName { get; set; }
+            [BsonElement("PlayerFirstName")] public string PlayerFirstName { get; set; }
 
-            [BsonElement("lastName")] public string LastName { get; set; }
+            [BsonElement("PlayerLastName")] public string PlayerLastName { get; set; }
 
-            [BsonElement("phoneNumber")] public string PhoneNumber { get; set; }
+            [BsonElement("PlayerPhoneNumber")] public string PlayerPhoneNumber { get; set; }
 
-            [BsonElement("email")] public string Email { get; set; }
+            [BsonElement("PlayerEmail")] public string PlayerEmail { get; set; }
 
-            [BsonElement("redeemedToken")] public string RedeemedToken { get; set; }
+            [BsonElement("PlayerPendingPrizeRedemption")] public bool PlayerPendingPrizeRedemption { get; set; }
 
-            [BsonElement("lastGoldWin")] public string LastGoldWin { get; set; }
-
-            [BsonElement("lastSilverWin")] public string LastSilverWin { get; set; }
-
-            [BsonElement("lastPlayed")] public string LastPlayed { get; set; }
+            [BsonElement("PlayerLastPlayed")] public string PlayerLastPlayed { get; set; }
         }
 
         // ASYNC Method since we need to "await" on the DB Collection query to ensure we have needed information before contiuing
@@ -69,7 +65,12 @@ namespace WorkingWithMongoDB
                 // Iterate through the results and output information as needed
                 foreach (WinnerDB winner in results)
                 {
-                    Console.WriteLine($"First Name: {winner.FirstName}");
+                    Console.WriteLine($"First Name: {winner.PlayerFirstName}");
+                    Console.WriteLine($"Last Name: {winner.PlayerLastName}");
+                    Console.WriteLine($"Phone Number: {winner.PlayerPhoneNumber}");
+                    Console.WriteLine($"Email: {winner.PlayerEmail}");
+                    Console.WriteLine($"Pending Prize: {winner.PlayerPendingPrizeRedemption}");
+                    Console.WriteLine($"Last Played: {winner.PlayerLastPlayed}");
                 }
             }
 
