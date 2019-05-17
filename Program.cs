@@ -11,14 +11,14 @@ namespace WorkingWithMongoDB
         static void Main(string[] args)
         {
             // Calling our MainAsync() method defined below.
-            MainAsync().Wait();
+            QueryDBForWinnerCollectionInformation().Wait();
 
             // Reads the output we would have seen from console. Unsure of purpose, runs without this line
             Console.ReadLine();
         }
 
         // Creating a class for our WINNERS Collection -- with getters and setters. Every object in DB must be defined
-        public class Winner
+        public class WinnerDB
         {
             // [BsonElement("db item name")] needs to be the same as what is stored on the DB
             // the following variable declarations are used to rename those db items for use in this application
@@ -33,36 +33,43 @@ namespace WorkingWithMongoDB
             [BsonElement("email")] public string Email { get; set; }
 
             [BsonElement("redeemedToken")] public string RedeemedToken { get; set; }
+
+            [BsonElement("lastGoldWin")] public string LastGoldWin { get; set; }
+
+            [BsonElement("lastSilverWin")] public string LastSilverWin { get; set; }
+
+            [BsonElement("lastPlayed")] public string LastPlayed { get; set; }
         }
 
         // ASYNC Method since we need to "await" on the DB Collection query to ensure we have needed information before contiuing
-        static async Task MainAsync()
+        static async Task QueryDBForWinnerCollectionInformation()
         {
+            // Location of our database
             var connectionString = "mongodb://localhost:27017";
 
-            // Determining where the DB is and creating a MongoClient() for it
+            // Creating a MongoClient() for the DB
             var client = new MongoClient(connectionString);
 
             // Declaring a StartSession for use later
             var session = client.StartSession();
 
             // Longwinded way of getting a collection from the db and assigning to var
-            var collection = session.Client.GetDatabase("local").GetCollection<Winner>("winners");
+            var collection = session.Client.GetDatabase("local").GetCollection<WinnerDB>("winners");
 
             session.StartTransaction();
 
             try
             {
-                // Creating an empty filter so that we pull all information from the collection
-                var filter = new FilterDefinitionBuilder<Winner>().Empty;
+                // Creating an empty filter so that we pull all information from the WinnerDB Collection (Created as a class above)
+                var filter = new FilterDefinitionBuilder<WinnerDB>().Empty;
 
                 // Applying our filter to the collection and converting it to a list that is usable
-                var results = await collection.Find<Winner>(filter).ToListAsync<Winner>();
+                var results = await collection.Find<WinnerDB>(filter).ToListAsync<WinnerDB>();
 
                 // Iterate through the results and output information as needed
-                foreach (Winner w in results)
+                foreach (WinnerDB winner in results)
                 {
-                    Console.WriteLine($"First Name: {w.FirstName}");
+                    Console.WriteLine($"First Name: {winner.FirstName}");
                 }
             }
 
